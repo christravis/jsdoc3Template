@@ -1,6 +1,14 @@
 [
-	"<?js 
-		print(this.name);
+       	"<?js 
+                if (this.meta && this.meta.path && this.myPublisher && this.myPublisher.conf && 
+                    this.myPublisher.conf['jd3t'] && this.myPublisher.conf['jd3t'].sourceBaseDir) {
+                    var myModule = this.meta.path.replace(this.myPublisher.conf['jd3t'].sourceBaseDir, '');
+                    myModule = myModule.replace(new RegExp( '^/'), '');
+                    myModule = myModule.replace(new RegExp( '/.*'), '');
+                    print(this.name + ' (' + myModule + ')');
+                } else {
+                    print(this.name);
+                }
 	?>", 
 	"<?js= this.longname ?>.html", "<?js
 		if(this.kind === 'class' && this.augments && this.augments.length) {
