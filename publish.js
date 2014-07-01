@@ -1,7 +1,7 @@
 
 
 exports.publish = function(data, opts) {
-	require.paths.push(opts.template + '/node_modules');
+	//require.paths.push(opts.template + '/node_modules');
 	var myPublisher = require('jd3t/myPublisher.js');
 
 	console.log('Init jsdoc3Template');
